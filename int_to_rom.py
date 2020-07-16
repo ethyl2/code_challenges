@@ -79,6 +79,8 @@ class Solution:
 s = Solution()
 print(s.intToRoman(556))
 
+# Another person's recursive solution
+
 
 class Solution2:
     def __init__(self):
@@ -144,6 +146,8 @@ class Solution2:
 
 s2 = Solution2()
 print(s2.intToRoman(333))
+
+# My version that is similar, but is iterative.
 
 
 class Solution3:
