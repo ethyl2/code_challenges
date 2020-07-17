@@ -155,3 +155,25 @@ print(threeNumberSum_second([12, 3, 1, 2, -6, 5, -8, 6], 0))
 print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))
 print(threeNumberSum_sort_first([12, 3, 1, 2, -6, 5, -8, 6], 0))
 # All should return [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
+
+
+# Another person's implementation with sorting and then pointers:
+def threeNumberSum_with_pointers(array, targetSum):
+    result = []
+    array.sort()
+    for i in range(len(array) - 1):
+        low = i + 1
+        high = len(array) - 1
+        while low < high:
+            if array[i] + array[low] + array[high] == targetSum:
+                result.append(sorted([array[i], array[low], array[high]]))
+                low += 1
+                high -= 1
+            elif array[i] + array[low] + array[high] < targetSum:
+                low += 1
+            else:
+                high -= 1
+    return result
+
+
+print(threeNumberSum_with_pointers([12, 3, 1, 2, -6, 5, -8, 6], 0))
