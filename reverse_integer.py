@@ -68,7 +68,7 @@ class Solution:
             return 0
         return(output_int)
 
-    # This approach uses modulus to get the digits.
+    # This approach uses modulus to get the digits. It is more space efficient.
     def reverse3(self, x: int) -> int:
         is_neg = x < 0
         x = abs(x)
@@ -76,7 +76,6 @@ class Solution:
         while x > 0:
             curr_digit = x % 10
             output.append(curr_digit)
-            x -= curr_digit
             x //= 10
         output_int = sum(digit * 10**i for i, digit in enumerate(output[::-1]))
         if is_neg:
