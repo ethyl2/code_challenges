@@ -11,3 +11,18 @@ class Solution:
             return 0
         else:
             return haystack.find(needle)
+
+    # Another way, if using .find() was not allowed:
+    def strStr2(self, haystack, needle):
+        if len(needle) == 0:
+            return 0
+        substring_length = len(needle)
+        for i in range(len(haystack) - substring_length):
+            print(haystack[i:i+substring_length])
+            if haystack[i:i+substring_length] == needle:
+                return i
+        return -1
+
+
+s = Solution()
+print(s.strStr2('hello', 'll'))
