@@ -38,9 +38,25 @@ class Solution:
                 return i
         return i+1
 
+    # This third version should be the most time efficient of the 3 versions. It uses a binary search, so the
+    # ave run time is Θ(log(n)). Worst case is still O(n).
+    def searchInsert3(self, nums, target: int) -> int:
+        left = 0
+        right = len(nums)
+        mid = (left + right) // 2
+        while left < right:
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
+                right = mid
+            else:
+                left = mid + 1
+            mid = (left + right) // 2
+        return mid
+
 
 s = Solution()
-print(s.searchInsert2([1, 3, 5, 6], 5))  # 2
-print(s.searchInsert2([1, 3, 5, 6], 2))
-print(s.searchInsert2([1, 3, 5, 6], 7))
-print(s.searchInsert2([1, 3, 5, 6], 0))
+# print(s.searchInsert3([1, 3, 5, 6], 5))  # 2
+# print(s.searchInsert3([1, 3, 5, 6], 2))
+# print(s.searchInsert3([1, 3, 5, 6], 7))
+print(s.searchInsert3([1, 3, 5, 6], 0))
