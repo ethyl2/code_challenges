@@ -2,8 +2,8 @@
 https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 
 Given a sorted arr of integers, remove the duplicates in-place and return the new length.
-"It doesn't matter what values are set beyond the returned length." - makes me wonder if you
-can have duplicates, but beyond the index of where all of the individual instances of the numbers are at?
+"It doesn't matter what values are set beyond the returned length." <- So, put all duplicates at the right side
+of the arr.
 
 Examples:
 
