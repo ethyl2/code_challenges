@@ -39,7 +39,7 @@ def countSubsLessThanK(arr, k):
 
 # print(countSubsLessThanK([2, 5, 6], 10))
 
-
+# This version is more time-efficient: O(n)
 def countSubsLessThanK2(arr, k):
     # Edge cases
     if arr == None or len(arr) == 0 or k == 0:
