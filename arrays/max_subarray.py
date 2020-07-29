@@ -9,6 +9,8 @@ Output: 6
 Explanation: [4,-1,2,1] has the largest sum = 6.
 
 Notes: After finishing a O(n) approach, implement a divide-and-conquer approach, 'which is more subtle'.
+
+To be continued...
 """
 
 
@@ -25,7 +27,7 @@ class Solution:
                 current_total -= nums[lowest_index]
                 lowest_index += 1
             print(current_total)
-            print(nums[smallest_index:i])
+            print(nums[lowest_index:i])
         return current_total
 
 
