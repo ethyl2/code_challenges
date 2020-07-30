@@ -13,10 +13,11 @@ Must do it in-place with space O(1).
 Approach to try:
 Interate from right to left and
 Find the first int that is larger, not smaller, than the int before it.
-Its index will be the pivot index.
+The index of the int before it will be the pivot index.
 If no index if found, return the reversed list.
 
-Then find the smallest possible int that we can swap with, and do the swap.
+Then find the int to the right that is the smallest of the ints that are larger than the pivot, 
+and swap the pivot with that int.
 
 Finally, reverse the sublist right of the pivot.
 """
@@ -52,6 +53,7 @@ class Solution:
         return -1
 
     def swap_pivot(self, pivot_index: int, nums: List[int]) -> None:
+        # Start at the right in order to get the smallest int of those that are larger than the pivot.
         for i in range(len(nums) - 1, pivot_index, -1):
             if nums[i] > nums[pivot_index]:
                 nums[i], nums[pivot_index] = nums[pivot_index], nums[i]
@@ -73,7 +75,7 @@ s = Solution()
 # print(s.nextPermutation([1, 2, 3]))  # 1,3,2
 # print(s.nextPermutation([3, 2, 1]))  # 1,2,3
 # print(s.nextPermutation([1, 1, 5])) # 1,5,1
-# print(s.nextPermutation([6, 8, 4, 5, 3, 2]))
+# print(s.nextPermutation([6, 8, 4, 5, 3, 2]))  # 6,8,5,2,3,4
 # print(s.nextPermutation([1]))
 # print(s.nextPermutation([1, 1]))
 print(s.nextPermutation([1, 3, 2]))  # -> [2,1,3]
