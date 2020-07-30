@@ -32,6 +32,8 @@ When we encounter a closing parenthesis, pop from the stack,
     making a new list that doesn't include the parenthesis currently involved, and does include the newly
     reversed sublist.
 Finally, convert the list into a string and return that.
+
+TODO: finish debugging recursion version
 """
 
 
