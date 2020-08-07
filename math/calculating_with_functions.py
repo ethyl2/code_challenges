@@ -13,37 +13,123 @@ Looks like the operation functions must take a number function invoked as a para
 """
 
 
-def zero():  # your code here
+def zero(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('0' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    return '0'
 
 
-def one():  # your code here
+def one(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('1' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '1'
 
 
-def two():  # your code here
+def two(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('2' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '2'
 
 
-def three():  # your code here
+def three(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('3' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '3'
 
 
-def four():  # your code here
+def four(*operation_function_invocation):
+    if operation_function_invocation:
+
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('4' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '4'
 
 
-def five():  # your code here
+def five(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('5' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '5'
 
 
-def six():  # your code here
+def six(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('6' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '6'
 
 
-def seven():  # your code here
+def seven(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('7' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '7'
 
 
-def eight():  # your code here
+def eight(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('8' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '8'
 
 
-def nine():  # your code here
+def nine(*operation_function_invocation):
+    if operation_function_invocation:
+        if (operation_function_invocation[0][0] == '//' and operation_function_invocation[0][1] == '0'):
+            return 'No division by zero allowed'
+        return eval('9' + operation_function_invocation[0][0] + operation_function_invocation[0][1])
+    else:
+        return '9'
 
 
-def plus():  # your code here
-def minus():  # your code here
-def times():  # your code here
-def divided_by():  # your code here
+def plus(number_function_invocation):
+    return '+', number_function_invocation
+
+
+def minus(number_function_invocation):
+    return '-', number_function_invocation
+
+
+def times(number_function_invocation):
+    return '*', number_function_invocation
+
+
+def divided_by(number_function_invocation):
+    return '//', number_function_invocation
+
+
+def checkForDivisionByZero(operator, string_num):
+    if (operator == '//' and string_num == '0'):
+        return True
+
+
+# print(one(plus(one())))
+# print(nine(plus(two())))
+# print(zero(plus(four())))
+# print(four(plus(zero())))
+# print(nine(times(two())))
+# print(nine(divided_by(two())))
+# print(nine(minus(two())))
+# print(zero(divided_by(four())))
+print(five(divided_by(zero())))
