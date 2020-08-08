@@ -25,19 +25,17 @@ def is_subsequence(sub: List, arr: List) -> bool:
     while sub_index < len(sub) and arr_index < len(arr):
         if arr[arr_index] == sub[sub_index]:
             sub_index += 1
-            arr_index += 1
-        else:
-            arr_index += 1
+        arr_index += 1
     if sub_index == len(sub):
         return True
     return False
 
 
-# print(is_subsequence([1, 3, 4], [1, 2, 3, 4]))
-# print(is_subsequence([1, 4, 3], [1, 2, 3, 4]))
-# print(is_subsequence([1, 3, 4], [1, 2, 3, 4, 5, 6]))
-# print(is_subsequence([1, 3, 4, 5], [1, 2, 3, 4]))
-# print(is_subsequence([1, 6, -1, 10],  [5, 1, 22, 25, 6, -1, 8, 10]))
+print(is_subsequence([1, 3, 4], [1, 2, 3, 4]))
+print(is_subsequence([1, 4, 3], [1, 2, 3, 4]))
+print(is_subsequence([1, 3, 4], [1, 2, 3, 4, 5, 6]))
+print(is_subsequence([1, 3, 4, 5], [1, 2, 3, 4]))
+print(is_subsequence([1, 6, -1, 10],  [5, 1, 22, 25, 6, -1, 8, 10]))
 
 
 def recursive_is_subsequence(sub, arr):
@@ -50,8 +48,8 @@ def recursive_is_subsequence(sub, arr):
     return recursive_is_subsequence(sub, arr[1:])
 
 
-print(recursive_is_subsequence([1, 3, 4], [1, 2, 3, 4]))
-print(recursive_is_subsequence([1, 4, 3], [1, 2, 3, 4]))
-print(recursive_is_subsequence([1, 3, 4], [1, 2, 3, 4, 5, 6]))
-print(recursive_is_subsequence([1, 3, 4, 5], [1, 2, 3, 4]))
-print(recursive_is_subsequence([1, 6, -1, 10],  [5, 1, 22, 25, 6, -1, 8, 10]))
+# print(recursive_is_subsequence([1, 3, 4], [1, 2, 3, 4]))
+# print(recursive_is_subsequence([1, 4, 3], [1, 2, 3, 4]))
+# print(recursive_is_subsequence([1, 3, 4], [1, 2, 3, 4, 5, 6]))
+# print(recursive_is_subsequence([1, 3, 4, 5], [1, 2, 3, 4]))
+# print(recursive_is_subsequence([1, 6, -1, 10],  [5, 1, 22, 25, 6, -1, 8, 10]))
