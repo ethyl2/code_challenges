@@ -13,6 +13,8 @@ Don't worry about changing punctuation or capitalization. For example, a "word" 
 Print the word.
 If it's a "stop word", stop. Stop words are words that end in any of the punctuation .?!, or that punctuation followed by a ".
 Else randomly choose a word that can follow this one.
+
+Stretch goal: Make sure there is always a close quote for an opening quote in the sentence.
 """
 
 import random
@@ -31,8 +33,8 @@ words_list = words.split()
 # print(words_list)
 
 
-# TODO: analyze which words can follow other words
-# Your code here
+# analyze which words can follow other words
+
 lookup = {}
 starts = set()
 stops = set()
@@ -60,8 +62,7 @@ if words_list[i+1][-1] in '.?!' or (len(words_list[i+1]) > 1 and words_list[i+1]
 # print(stops)
 
 
-# TODO: construct 5 random sentences
-# Your code here
+# construct 5 random sentences
 
 
 for i in range(5):
