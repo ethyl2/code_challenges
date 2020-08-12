@@ -64,8 +64,17 @@ def histo(text_file):
 
         longest_word_length = max(len(formatted_word), longest_word_length)
 
+    # My implementation of printing:
+    '''
     for word, count in sorted(words_dict.items(), key=lambda entry: (-entry[1], entry[0])):
         print(word + ' ' * (longest_word_length + 2 - len(word)) + '#' * count)
+    '''
+    # Instead, using an f-string with nested braces to print a variable field width
+    for c in sorted(words_dict.items(), key=lambda entry: (-entry[1], entry[0])):
+        print(f'{c[0]:{longest_word_length}}  ', end='')
+        for _ in range(c[1]):
+            print(f'#', end='')
+        print()
 
 
 histo('robin.txt')
