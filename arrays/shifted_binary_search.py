@@ -11,6 +11,9 @@ arr = [3,5,7,9,0,1,2] target = 1  -> 5  Note: The rotation point is the value 0 
 
 
 def shifted_binary_search(arr, target):
+    if len(arr) < 1:
+        return -1
+
     rp = find_rotation_point(arr)
     left = binary_search(arr, target, 0, rp - 1)
     right = binary_search(arr, target, rp, len(arr) - 1)
@@ -38,6 +41,10 @@ def binary_search(arr, target, left, right):
 def find_rotation_point(arr):
     left = 0
     right = len(arr) - 1
+
+    if left + 1 == right:
+        return right
+
     while left < right:
         mid = left + (right - left) // 2
         if arr[mid] > arr[0]:
@@ -46,12 +53,18 @@ def find_rotation_point(arr):
         else:
             # The rp must be somewhere in the right side
             right = mid
+
         # Now, once the floor and the ceiling are adjacent, we've found the rp!
         if left + 1 == right:
             return right
+    return right
 
 
-print(shifted_binary_search([3, 5, 7, 9, 0, 1, 2], 1))
+# print(shifted_binary_search([3, 5, 7, 9, 0, 1, 2], 1))
 # print(find_rotation_point([3, 5, 7, 9, 0, 1, 2]))
 # print(binary_search([1, 3, 5, 6], 1, 0, 3))
 # print(shifted_binary_search([1, 2, 3, 4], 3))
+# print(shifted_binary_search([], 5))
+# print(shifted_binary_search([1], 1))
+print(shifted_binary_search([3, 1], 1))
+print(find_rotation_point([3, 1]))
