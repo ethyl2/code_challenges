@@ -3,6 +3,8 @@ import unittest
 
 from circle import Circle
 
+# Just a note: An alterate way to run this test is to type 'py -m unittest' inside the terminal.
+
 
 class CircleTests(unittest.TestCase):
     def test_radius(self):
