@@ -6,7 +6,7 @@ The rotation point is the smallest value.
 
 arr = [3,5,7,9,0,1,2] target = 1  -> 5  Note: The rotation point is the value 0 at index 4.
 
-
+Take-home point: Find the rotation point first. Then you can do binary search on each side separately.
 """
 
 
