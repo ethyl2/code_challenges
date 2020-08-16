@@ -24,9 +24,9 @@ His approach:
 
 2. In ways, put 0 in all but the first index. (We consider there to be just 1 way to get 0 money.)
 
-    1 0 0 0 0 0 0 0 0 0 0 0
+    1 0 0 0 0 0 0 0 0 0  0 
     _ _ _ _ _ _ _ _ _ _  _ 
-    0 1 2 3 4 5 6 7 8 9 10
+    0 1 2 3 4 5 6 7 8 9  10
 
 3. Iterate through a nested loop that consists of 
     for each denomination, 
@@ -41,11 +41,26 @@ His approach:
         This is probably the hardest thing for me to understand. But it works. 
             After the loop where 1 is the denomination, the 10 index holds 1 way.
                 At that point, you could make change for 10 with ten 1s only.
+
+                1 1 1 1 1 1 1 1 1 1  1 
+                _ _ _ _ _ _ _ _ _ _  _ 
+                0 1 2 3 4 5 6 7 8 9  10
+
             After the loop where 5 is the denomination, the 10 index holds 3 ways, because 10-5=5 and the 5 index's value is 2, so that is added.
                 At that point, you could make change for 5 with five 1s or one 5.
                 At that point, you could make change for 10 with ten 1s, five 1s + one 1, or two 5s.
+
+                1 1 1 1 1 2 2 2 2 2  3 
+                _ _ _ _ _ _ _ _ _ _  _ 
+                0 1 2 3 4 5 6 7 8 9  10
+
             After the loop where 10 is the denomination, the 10 index holds 4 ways, because 10-10-0 and the 0 index's value is 1, so that is added.
                 At that point, you could make change for 10 with ten 1s, five 1s + one 1, two 5s, or one 10.
+
+                1 1 1 1 1 2 2 2 2 2  4  
+                _ _ _ _ _ _ _ _ _ _  _ 
+                0 1 2 3 4 5 6 7 8 9  10
+
 4. Return ways[0].
 """
 from typing import List
@@ -62,8 +77,8 @@ def make_change(target: int, denominations: List) -> int:
         for index in range(1, len(ways)):
             if denom <= index:
                 ways[index] += ways[index-denom]
-            print(f'denom: {denom:{2}}, index: {index:{2}}, {ways= }')
-    return ways[0]
+            # print(f'denom: {denom:{2}}, index: {index:{2}}, {ways= }')
+    return ways[-1]
 
 
 print(make_change(10, [1, 5, 10, 15]))
