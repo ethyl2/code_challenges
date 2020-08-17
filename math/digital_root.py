@@ -24,3 +24,24 @@ def digital_root(n: int) -> int:
 print(digital_root(16))
 print(digital_root(942))
 print(digital_root(132189))
+
+
+# Another person's solution that takes advantage of the map() method.
+def digital_root3(n: int) -> int:
+    return n if n < 10 else digital_root(sum(map(int, str(n))))
+
+
+print(digital_root3(16))
+print(digital_root3(942))
+print(digital_root3(132189))
+
+# Another person's solution. Looks like a clever shortcut!
+
+
+def digital_root2(n):
+    return n % 9 or n and 9
+
+
+print(digital_root2(16))
+print(digital_root2(942))
+print(digital_root2(132189))
