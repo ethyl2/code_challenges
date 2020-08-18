@@ -71,8 +71,7 @@ class Solution:
             return False
         index = 1
 
-        while len(s) > 1 and index < len(s) + 1:
-
+        while index < len(s) + 1:
             if s[:index] in wordDict:
                 # Check to see if the rest of the string also returns True
                 if self.wordBreak4(s[index:], wordDict):
@@ -120,12 +119,12 @@ class Solution:
 
 
 solution = Solution()
-# print(solution.wordBreak2('leetcode', ['leet', 'code']))
-# print(solution.wordBreak3('applepenapple', ['apple', 'pen']))
-# print(solution.wordBreak3('catsandog', [
-#     'cats', 'dog', 'sand', 'and', 'cat']))  # False
+print(solution.wordBreak3('leetcode', ['leet', 'code']))
+print(solution.wordBreak3('applepenapple', ['apple', 'pen']))
+print(solution.wordBreak3('catsandog', [
+    'cats', 'dog', 'sand', 'and', 'cat']))  # False
 # print(solution.wordBreak3('abc', ['a', 'b', 'c'])) # True
-# print(solution.wordBreak3('aaaaaaa', ['aaaa', 'aaa']))  # True
+print(solution.wordBreak3('aaaaaaa', ['aaaa', 'aaa']))  # True
 string1 = "bccdbacdbdacddabbaaaadababadad"
 dict1 = ["cbc", "bcda", "adb", "ddca", "bad", "bbb", "dad", "dac", "ba", "aa", "bd", "abab", "bb", "dbda", "cb", "caccc", "d", "dd", "aadb", "cc", "b", "bcc", "bcd", "cd", "cbca", "bbd",
          "ddd", "dabb", "ab", "acd", "a", "bbcc", "cdcbd", "cada", "dbca", "ac", "abacd", "cba", "cdb", "dbac", "aada", "cdcda", "cdc", "dbc", "dbcb", "bdb", "ddbdd", "cadaa", "ddbc", "babb"]
