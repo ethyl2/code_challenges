@@ -60,6 +60,7 @@ class Solution:
 
         return False
 
+    # Here's my 2nd version, that uses a cache to increase time performance.
     def wordBreak3(self, s: str, wordDict: List[str]) -> bool:
         wordDict = set(wordDict)
         self.cache_of_rejected_strings = set()
@@ -71,19 +72,50 @@ class Solution:
         index = 1
 
         while len(s) > 1 and index < len(s) + 1:
-            if s[:index] in wordDict and self.wordBreak4(s[index:], wordDict):
+
+            if s[:index] in wordDict:
                 # Check to see if the rest of the string also returns True
                 if self.wordBreak4(s[index:], wordDict):
                     return True
                 else:
                     self.cache_of_rejected_strings.add(s[index:])
-            else:
-                # Otherwise, expand the amount of the string being searched by incrementing the index pointer.
-                index += 1
+
+            index += 1
 
         if len(s) == 0 or s in wordDict:
             return True
+        self.cache_of_rejected_strings.add(s)
+        return False
 
+    # Here's his solution that uses a cache:
+
+    def wordBreak5(self, s: str, wordDict: List[str]) -> bool:
+        """Instantiate a cache here and invoke the
+        version of wordBreak that uses a set"""
+        self.cache = set([])
+        wordSet = set(wordDict)
+        return self.wordBreakWithSet2(s, wordSet)
+
+    def wordBreakWithSet2(self, s: str, wordDict: Set[str]) -> bool:
+        if len(s) == 0:
+            return True
+        elif not s:
+            return False
+        if s in self.cache:
+            return False
+        # s is not in the cache, so I need to check it and also
+        # populate the cache with the result
+        for i in range(1, len(s) + 1):
+            left_slice = s[:i]
+            right_slice = s[i:]
+            # print(left_slice, right_slice)
+            if left_slice in wordDict:
+                if self.wordBreakWithSet2(right_slice, wordDict):
+                    return True
+                self.cache.add(right_slice)
+        # We couldn't match the whole word to a word in the dictionary
+        # We need to return false here!
+        self.cache.add(s)
         return False
 
 
@@ -91,7 +123,7 @@ solution = Solution()
 # print(solution.wordBreak2('leetcode', ['leet', 'code']))
 # print(solution.wordBreak3('applepenapple', ['apple', 'pen']))
 # print(solution.wordBreak3('catsandog', [
-#       'cats', 'dog', 'sand', 'and', 'cat']))  # False
+#     'cats', 'dog', 'sand', 'and', 'cat']))  # False
 # print(solution.wordBreak3('abc', ['a', 'b', 'c'])) # True
 # print(solution.wordBreak3('aaaaaaa', ['aaaa', 'aaa']))  # True
 string1 = "bccdbacdbdacddabbaaaadababadad"
