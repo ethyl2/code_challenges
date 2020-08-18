@@ -14,7 +14,6 @@ spinWords( "This is another test" )=> returns "This is rehtona test"
 def spin_words(sentence: str) -> str:
     output = []
     for word in sentence.split():
-
         if len(word) >= 5:
             output.append(''.join(reversed([char for char in word])))
         else:
