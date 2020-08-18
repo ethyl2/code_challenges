@@ -36,6 +36,19 @@ def likes(names: List[str]) -> str:
                 output
     return output
 
+# Another person's implementation is below. I like it a lot.
+
+
+def likes2(name: List[str]) -> str:
+    n = len(names)
+    return {
+        0: 'no one likes this',
+        1: '{} likes this',
+        2: '{} and {} like this',
+        3: '{}, {} and {} like this',
+        4: '{}, {} and {others} others like this'
+    }[min(4, n)].format(*names[:3], others=n-2)
+
 
 print(likes([]))
 print(likes(['Beej']))
