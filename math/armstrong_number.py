@@ -23,6 +23,10 @@ we might want to put our results of handling each digit in a cache, to handle th
 import math
 
 # This first function deals with 3 digit nums only.
+# Time complexity: it would be O(n), where n is the number of digits of the value parameter,
+#   if the number of digits varied between inputs.
+# However, in this case, n is always 3, so technically, time complexity O(3) simplifies to O(1).
+# O(1) space.
 
 
 def three_digit_num_is_armstrong_num(value: int) -> bool:
@@ -38,6 +42,8 @@ def three_digit_num_is_armstrong_num(value: int) -> bool:
     return initial_value == total
 
 # This second one will take any number of digits.
+# Time O(n) where n is the number of digits.
+# Space O(1).
 
 
 def num_is_armstrong_num(value: int) -> bool:
@@ -52,6 +58,9 @@ def num_is_armstrong_num(value: int) -> bool:
     return initial_value == total
 
 # This one will be more time efficient, but a LITTLE less space efficient, due to the cache.
+# Time O(n), where n is the number of digits of value.
+# Technically, space might be O(1) still, though because cache will never be bigger than 9 slots (keys 0-9). However, the
+#   values stored at those might be large enough to make a noticeable difference in memory usage.
 
 
 def num_is_armstrong_num_with_cache(value: int) -> bool:
