@@ -36,8 +36,27 @@ def is_isogram2(my_string):
     return True
 
 
+def is_isogram3(string: str) -> bool:
+    """
+    https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/python
+    A simpler version, which assumes that input has only letters.
+    Ignore letter case.
+    Assume an empty string is an isogram
+    """
+    cache = set()
+    for char in string.lower():
+        if char in cache:
+            return False
+        cache.add(char)
+    return True
+
+
 print(is_isogram('Amb idex--tr  ously'))
 print(is_isogram2('Amb idex--tr  ously'))
 
 print(is_isogram('butter'))
 print(is_isogram2('butter'))
+
+print(is_isogram3("Dermatoglyphics"))  # True
+print(is_isogram3("aba"))  # false
+print(is_isogram3("moOse"))  # false
