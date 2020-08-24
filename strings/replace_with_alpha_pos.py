@@ -12,6 +12,10 @@ import string
 
 
 def alphabet_position(text: str) -> str:
+    """
+    My solution. Creates a dictionary to find the position with time complexity O(1).
+    Overall time complexity O(n) where n is either the length of the alphabet or length of the string, whichever is larger.
+    """
     alphabet = string.ascii_lowercase
     alphabet_dict = {}
     output_list = []
@@ -23,4 +27,12 @@ def alphabet_position(text: str) -> str:
     return ' '.join(output_list)
 
 
+def alphabet_position2(text: str) -> str:
+    """
+    Another person's implementation. Uses ord()
+    """
+    return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
+
+
 print(alphabet_position("The sunset sets at twelve o' clock."))
+print(alphabet_position2("The sunset sets at twelve o' clock."))
