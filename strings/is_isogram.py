@@ -51,6 +51,13 @@ def is_isogram3(string: str) -> bool:
     return True
 
 
+def is_isogram4(string: str) -> bool:
+    """
+    Another person's solution. So concise!
+    """
+    return len(string) == len(set(string.lower()))
+
+
 print(is_isogram('Amb idex--tr  ously'))
 print(is_isogram2('Amb idex--tr  ously'))
 
@@ -60,3 +67,7 @@ print(is_isogram2('butter'))
 print(is_isogram3("Dermatoglyphics"))  # True
 print(is_isogram3("aba"))  # false
 print(is_isogram3("moOse"))  # false
+
+print(is_isogram4("Dermatoglyphics"))  # True
+print(is_isogram4("aba"))  # false
+print(is_isogram4("moOse"))  # false
