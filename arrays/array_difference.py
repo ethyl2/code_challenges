@@ -18,8 +18,18 @@ def array_diff(a: List[int], b: List[int]):
     return list(filter(lambda x: x in set_a, a))
 
 
+def array_diff2(a: List[int], b: List[int]):
+    return [num for num in a if num not in set(b)]
+
+
 print(array_diff([1, 2], [1]))
 print(array_diff([1, 2, 2, 2, 3], [2]))
 print(array_diff([], [1, 2]))
 print(array_diff([1, 2, 2], [1]))
 print(array_diff([1, 2, 2], [0]))
+
+print(array_diff2([1, 2], [1]))
+print(array_diff2([1, 2, 2, 2, 3], [2]))
+print(array_diff2([], [1, 2]))
+print(array_diff2([1, 2, 2], [1]))
+print(array_diff2([1, 2, 2], [0]))
