@@ -12,6 +12,11 @@ from typing import List
 
 
 def array_diff(a: List[int], b: List[int]):
+    """
+    My first idea. Uses the symmetric_difference_update() method.
+    Not super time efficient, b/c the worst case can be O(len(a) * len(b)).
+    https://wiki.python.org/moin/TimeComplexity
+    """
     set_a = set(a)
     set_b = set(b)
     set_a.symmetric_difference_update(set_b)
@@ -19,6 +24,10 @@ def array_diff(a: List[int], b: List[int]):
 
 
 def array_diff2(a: List[int], b: List[int]):
+    """
+    Second version uses a list comprehension and only 1 set
+    Time complexity O(n)
+    """
     return [num for num in a if num not in set(b)]
 
 

@@ -10,6 +10,8 @@ you sum the last 3 numbers (instead of 2) to get the next element.
 
 from typing import List, Dict
 
+# My version. Uses a cache for time optimization.
+
 
 def tribonacci(signature: List[int], n: int) -> List[int]:
     output = []

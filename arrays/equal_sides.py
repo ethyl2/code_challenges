@@ -22,7 +22,7 @@ def find_even_index(arr: List[int]) -> int:
     if left_sum == right_sum:
         return 0
     for i in range(0, len(arr) - 1):
-        print(f'{i = }, {left_sum = }, {right_sum = }')
+        # print(f'{i = }, {left_sum = }, {right_sum = }')
         if left_sum == right_sum:
             return i
 
