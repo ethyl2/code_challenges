@@ -15,5 +15,15 @@ def DNA_strand(dna: str) -> str:
     return ''.join([bases[current] for current in dna])
 
 
+def DNA_strand2(dna: str) -> str:
+    """
+    Another person's version. I like the use of str.maketrans()
+    """
+    return dna.translate(str.maketrans("ATCG", "TAGC"))
+
+
 print(DNA_strand("ATTGC"))
 print(DNA_strand("GTAT"))
+
+print(DNA_strand2("ATTGC"))
+print(DNA_strand2("GTAT"))
