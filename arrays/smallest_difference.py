@@ -1,8 +1,8 @@
 """
 From algo expert
 
-Given non-empty arrays of integers,
-find the pair whose absolute difference is closest to zero.
+Given 2 non-empty arrays of integers,
+find the pair of integers (one from the first array, the other from the second) whose absolute difference is closest to zero.
 Return an array with those numbers, with the number from the first array in the first position.
 
 Example: [-1,5,10,20, 28, 3], [26,134, 135, 15, 17] -> [28, 26]
@@ -45,8 +45,10 @@ def find_nums_with_abs_smallest_diff2(array_one: List[int], array_two: List[int]
             output[0] = array_one[pointer_one]
             output[1] = array_two[pointer_two]
         if array_one[pointer_one] < array_two[pointer_two]:
+            # Move the pointer_one to a value that will be closer to the current value of the second array.
             pointer_one += 1
         else:
+            # Move pointer_two to a value that will be closer to the current value of the first array.
             pointer_two += 1
     return output
 
