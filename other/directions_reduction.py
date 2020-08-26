@@ -32,9 +32,26 @@ def dirReduc(arr: List[str]) -> List[str]:
     return arr
 
 
+def dirReduc2(plan):
+    new_plan = []
+    for d in plan:
+        if new_plan and new_plan[-1] == opps[d]:
+            new_plan.pop()
+        else:
+            new_plan.append(d)
+    return new_plan
+
+
 print(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST",
                 "WEST", "NORTH", "WEST"]))  # ["WEST"]
 # ["NORTH", "WEST", "SOUTH", "EAST"]
 print(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
 print(dirReduc(["NORTH", "SOUTH", "EAST", "WEST"]))  # []
 print(dirReduc(['NORTH', 'NORTH', 'WEST', 'EAST']))  # ['NORTH', 'NORTH']
+
+print(dirReduc2(["NORTH", "SOUTH", "SOUTH", "EAST",
+                 "WEST", "NORTH", "WEST"]))  # ["WEST"]
+# ["NORTH", "WEST", "SOUTH", "EAST"]
+print(dirReduc2(["NORTH", "WEST", "SOUTH", "EAST"]))
+print(dirReduc2(["NORTH", "SOUTH", "EAST", "WEST"]))  # []
+print(dirReduc2(['NORTH', 'NORTH', 'WEST', 'EAST']))  # ['NORTH', 'NORTH']
