@@ -33,6 +33,9 @@ def dirReduc(arr: List[str]) -> List[str]:
 
 
 def dirReduc2(plan):
+    '''
+    Other person's implementation. Much more space efficient. And time efficient, too. O(n) for both.
+    '''
     new_plan = []
     for d in plan:
         if new_plan and new_plan[-1] == opps[d]:
