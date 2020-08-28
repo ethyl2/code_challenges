@@ -35,7 +35,8 @@ def spiral_traverse(arr: List) -> List:
     er = len(arr) - 1
     ec = len(arr[0]) - 1
 
-    while sr < er and sc < ec:
+    # while sr < er and sc < ec:
+    while sr <= er and sc <= ec:
 
         # going across the top
         output.extend(arr[sr][sc:ec+1])
@@ -68,15 +69,25 @@ print(spiral_traverse([
     [11, 16, 15, 6],
     [10,  9,  8, 7]
 ]))
+'''
 print(spiral_traverse([[1, 2], [4, 3]]))
 print(spiral_traverse([[1, 2, 3], [6, 5, 4]]))
+
 '''
 print(spiral_traverse([
     [1, 2, 3, 4, 5, 6],
     [16, 17, 18, 19, 20, 7],
     [15, 24, 23, 22, 21, 8],
     [14, 13, 12, 11, 10, 9]]))
-
+'''
+'''
+array = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+result = spiral_traverse(array)
+expected = [1, 2, 3, 6, 9, 8, 7, 4, 5]
+print(result == expected)
+'''
 # Recursive version. Passes all tests I've made, except for one. TODO: figure out why!
 
 
