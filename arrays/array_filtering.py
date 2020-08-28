@@ -15,10 +15,25 @@ def filter_list(l: List[int or str]):
     return [element for element in l if type(element) == int]
 
 
+def filter_list2(l: List[int or str]):
+    return list(filter(lambda element: type(element) == int, l))
+
+
+print(filter_list2([1, 2, 'a', 'b']))
+print(filter_list2([1, 2, 'a', 'b']) == [1, 2])
+
+print(filter_list2([1, 'a', 'b', 0, 15]))
+print(filter_list2([1, 'a', 'b', 0, 15]) == [1, 0, 15])
+
+print(filter_list2([1, 2, 'aasf', '1', '123', 123]))
+print(filter_list2([1, 2, 'aasf', '1', '123', 123]) == [1, 2, 123])
+
+
 print(filter_list([1, 2, 'a', 'b']))
 print(filter_list([1, 2, 'a', 'b']) == [1, 2])
 
-print(filter_list([1, 'a', 'b', 0, 15]) == [1, 0, 15])
 print(filter_list([1, 'a', 'b', 0, 15]))
-print(filter_list([1, 2, 'aasf', '1', '123', 123]) == [1, 2, 123])
+print(filter_list([1, 'a', 'b', 0, 15]) == [1, 0, 15])
+
 print(filter_list([1, 2, 'aasf', '1', '123', 123]))
+print(filter_list([1, 2, 'aasf', '1', '123', 123]) == [1, 2, 123])
