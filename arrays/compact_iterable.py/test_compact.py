@@ -27,13 +27,13 @@ class CompactTests(unittest.TestCase):
         self.assertIterableEqual(compact([]), [])
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_accepts_iterator(self):
         nums = (n ** 2 for n in [1, 2, 3])
         self.assertIterableEqual(compact(nums), [1, 4, 9])
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_returns_iterator(self):
         nums = (n ** 2 for n in [1, 2, 3])
         output = compact(nums)
@@ -45,13 +45,21 @@ class CompactTests(unittest.TestCase):
         # It may look odd to test the squares input, but this is correct
         # because after 1 item has been consumed from the compact
         # iterator, nums should only have 1 item consumed as well
-        self.assertEqual(next(nums), 4)
+        # next_num = next(nums)
+        # print(next_num)
+        # self.assertEqual(next(nums), 4)
+        # self.assertEqual(next_num, 4)
+
+        # To test the next of output instead of the next of nums:
+        # self.assertEqual(next(output), 4)
 
         # A more extreme example: calling compact with an infinite iterator
+        '''
         from itertools import count
 
         tens = compact(round(n, -1) for n in count())
         self.assertEqual([next(tens) for _ in range(3)], [0, 10, 20])
+        '''
 
 
 if __name__ == "__main__":
