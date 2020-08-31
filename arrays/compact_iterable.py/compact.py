@@ -12,6 +12,9 @@ For example:
 [1, 2, 3, 2]
 >>> compact([])
 []
+
+Article on iterators: https://opensource.com/article/18/3/loop-better-deeper-look-iteration-python
+
 """
 
 
