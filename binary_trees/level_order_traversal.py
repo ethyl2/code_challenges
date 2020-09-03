@@ -16,6 +16,11 @@ Return
   [9,20],
   [15,7]
 ]
+
+My approach:
+First, make a function to that takes a list and converts it into a binary tree. (For local testing purposes)
+Then make the function that takes a binary tree and returns the nested array of its levels.
+
 """
 from collections import deque
 from typing import List
@@ -85,24 +90,31 @@ def create_binary_tree_from_array(arr: List[int]) -> int:
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        '''
+        I chose a deque object as my queue,
+        because "Deques support thread-safe, memory efficient appends and 
+        pops from either side of the deque with approximately the same O(1) performance in either direction."
+        '''
+        # Edge case
         if not root:
             return []
+
+        # Set up variables
         output = [[]]
         q = deque()
-
         level = 0
         q.append((root, level))
 
         while len(q) > 0:
-            current_node, current_level = q.popleft()
-            if current_level > level:
+            current_node, node_level = q.popleft()
+            if node_level > level:
                 output.append([])
-                level = current_level
+                level = node_level
             output[-1].append(current_node.val)
             if current_node.left:
-                q.append((current_node.left, current_level + 1))
+                q.append((current_node.left, node_level + 1))
             if current_node.right:
-                q.append((current_node.right, current_level + 1))
+                q.append((current_node.right, node_level + 1))
         return output
 
 
