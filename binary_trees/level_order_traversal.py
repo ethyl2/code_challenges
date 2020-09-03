@@ -85,7 +85,25 @@ def create_binary_tree_from_array(arr: List[int]) -> int:
 
 class Solution:
     def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        pass
+        if not root:
+            return []
+        output = [[]]
+        q = deque()
+
+        level = 0
+        q.append((root, level))
+
+        while len(q) > 0:
+            current_node, current_level = q.popleft()
+            if current_level > level:
+                output.append([])
+                level = current_level
+            output[-1].append(current_node.val)
+            if current_node.left:
+                q.append((current_node.left, current_level + 1))
+            if current_node.right:
+                q.append((current_node.right, current_level + 1))
+        return output
 
 
 '''
@@ -98,3 +116,5 @@ print(root.right.val)
 tree = create_binary_tree_from_array([3, 9, 20, None, None, 15, 7])
 print(tree.val)
 print(tree.left.val)
+s = Solution()
+print(s.levelOrder(tree))
