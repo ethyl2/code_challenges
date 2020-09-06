@@ -3,7 +3,7 @@ from algo expert
 Given a binary tree, invert it, which means that every left node should be swapped with its right node.
 
 Example:
-binary tree: [3,9,20,null,null,15,7]
+binary tree: [3, 9, 20, None, None, 15, 7]
     3
    / \
   9  20
