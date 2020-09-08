@@ -24,10 +24,12 @@ def validBraces(string):
         if brace in reference:
             opening_braces.append(brace)
         else:
+            if len(opening_braces) == 0:
+                return False
             current_opening = opening_braces.pop()
             if reference[current_opening] != brace:
                 return False
-    return True
+    return len(opening_braces) == 0
 
 
 print(validBraces("(){}[]"))
