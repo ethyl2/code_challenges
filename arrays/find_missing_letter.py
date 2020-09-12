@@ -15,7 +15,6 @@ from typing import List
 
 
 def find_missing_letter(chars: List[str]) -> str:
-    # print([ord(char) for char in chars])
     current_ord = ord(chars[0])
     for i in range(1, len(chars)):
         if ord(chars[i]) != current_ord + 1:
