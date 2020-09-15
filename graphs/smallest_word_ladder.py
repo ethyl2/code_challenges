@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/word-ladder/
 
+Andrew Candela's lecture 09-15-2020
+
 Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
 
 Only one letter can be changed at a time.
@@ -94,7 +96,7 @@ class Solution:
         visited = set([])
         adjacency_list = preprocessor(beginWord, endWord, wordList)
 
-        # Push the first item onto the queue
+        # Push the first items onto the queue
 
         beginning_intermed_strings = create_intermed_strings(beginWord)
 
