@@ -10,6 +10,8 @@ and it should return false if every element is distinct.
 from leetcode
 """
 
+from typing import List
+
 
 def containsDuplicate(arr):
     contains_duplicates = False
@@ -28,6 +30,14 @@ def containsDuplicate(arr):
     # print("False")
     return False
 
+
+def containsDuplicates2(arr: List[int]) -> bool:
+    num_set = set()
+    for num in arr:
+        if num in num_set:
+            return True
+        num_set.add(num)
+    return False
 
 # containsDuplicate([1, 2, 3, 1])
 # containsDuplicate([1, 2, 3, 4])
