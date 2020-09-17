@@ -7,7 +7,9 @@ and it should return false if every element is distinct.
 [1,2,3,1] -> true
 [1,2,3,4] -> false
 [1,1,1,3,3,4,3,2,4,2] -> true
+
 from leetcode
+https://leetcode.com/problems/contains-duplicate/submissions/
 """
 
 from typing import List
@@ -39,6 +41,12 @@ def containsDuplicates2(arr: List[int]) -> bool:
         num_set.add(num)
     return False
 
+
+def containsDuplicates3(arr: List[int]) -> bool:
+    num_set = set(arr)
+    return len(num_set) != len(arr)
+
+
 # containsDuplicate([1, 2, 3, 1])
 # containsDuplicate([1, 2, 3, 4])
-# containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])
+print(containsDuplicates3([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
