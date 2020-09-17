@@ -67,7 +67,7 @@ class Solution:
             curr_node, curr_path = q.popleft()
 
             # If at a leaf node, check to see if the sums are equal
-            if sum(curr_path) == sum and not curr_node.right and not curr_node.left:
+            if not curr_node.right and not curr_node.left and sum(curr_path) == sum:
                 output.append(curr_path)
 
             # Add the right and left nodes to the stack

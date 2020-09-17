@@ -61,6 +61,9 @@ def solution(n: int) -> str:
 
 
 def solution2(n: int) -> str:
+    """
+    another person's implementation. More concise. Uses more keys than I did, but that pays off.
+    """
     roman_numerals = {1000: 'M',
                       900: 'CM',
                       500: 'D',
