@@ -10,17 +10,17 @@ return a string in which they are ordered:
 
 def order_weight(strng: str) -> str:
     nums = strng.split()
-    print(nums)
+    # print(nums)
     totals = []
     for num in nums:
         digits_sum = sum([int(char) for char in num])
         # print(digits_sum)
         totals.append((num, digits_sum))
-    print(totals)
+    # print(totals)
     totals.sort(key=lambda x: [x[1], x[0]])
-    print(totals)
+    # print(totals)
     output = ' '.join([total[0] for total in totals])
-    print(output)
+    # print(output)
     return output
 
 
