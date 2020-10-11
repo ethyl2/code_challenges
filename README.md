@@ -1,3 +1,7 @@
 # Code Challenges
 
-I've been saving my code challenges in a different repo, mixed in with other things, but thought it would be handier to have a separate repo for the code challenges I've worked on.
+This is a collection of code challenges, implemented with python, mostly organized in directories.
+
+Many solutions have multiple solutions. A few are still works in progress.
+
+Contributions are very welcome. Read more [here](./CONTRIBUTIONS.md).
