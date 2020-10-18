@@ -53,9 +53,14 @@ class Solution:
         for i in range(len(text1)):
             for j in range(index, len(text2)):
                 if text1[i] == text2[j]:
+                    '''
                     count += 1
                     grid[i][j] = count
                     print(text1[i])
+                    '''
+                    largest_prev_count = 0
+                    for k in range(j):
+                        # TBD
                     index += 1
         print('count: ', count)
 
